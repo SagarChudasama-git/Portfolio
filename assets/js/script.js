@@ -16,14 +16,25 @@ const addEventOnElements = function (elements, eventType, callback) {
 
 /**
  * PRELOADER
+ * Show page faster by not waiting for all images to load
  */
 
 const preloader = document.querySelector("[data-preloader]");
 
-window.addEventListener("load", function () {
-  preloader.classList.add("loaded");
-  document.body.classList.add("loaded");
-});
+// Hide preloader when DOM is ready, not when all images are loaded
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", function () {
+    setTimeout(function() {
+      preloader.classList.add("loaded");
+      document.body.classList.add("loaded");
+    }, 500);
+  });
+} else {
+  setTimeout(function() {
+    preloader.classList.add("loaded");
+    document.body.classList.add("loaded");
+  }, 500);
+}
 
 
 

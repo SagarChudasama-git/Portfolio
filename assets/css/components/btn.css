@@ -1,0 +1,44 @@
+.btn {
+  background-color: var(--orange-red);
+  font-size: var(--fs-14);
+  font-weight: var(--fw-600);
+  text-transform: uppercase;
+  max-width: max-content;
+  letter-spacing: 1.5px;
+  padding: 14px 28px;
+  border-radius: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  border: none;
+}
+
+.btn:is(:hover, :focus-visible) {
+  background-color: var(--hover-bg, var(--jet));
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2), 0 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15), 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary,
+.btn-secondary { color: var(--white); }
+
+.btn-secondary {
+  background-color: var(--jet);
+  --shadow-color: var(--orange-red);
+  --hover-bg: var(--orange-red);
+  --hover-shadow-color: var(--jet);
+}
+
+.btn-tertiary {
+  color: var(--white);
+  --shadow-color: var(--orange-red);
+  --hover-bg: var(--orange-red);
+  --hover-shadow-color: var(--maximum-yellow-red);
+}
+
+.btn-tertiary:is(:hover, :focus-visible) { color: var(--white); }
